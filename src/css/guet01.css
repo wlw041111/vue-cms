@@ -1,0 +1,388 @@
+@charset "UTF-8";
+
+/* ===== 全局重置 ===== */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== 导航栏 ===== */
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: #275895;
+    position: relative;
+}
+
+ul.first {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+ul.second {
+    width: 160px;
+    background-color: #275895;
+    display: none;
+}
+
+li {
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.first > li {
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+}
+
+.first > li:hover ul {
+    display: block;
+}
+
+.second > li {
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.first > li a:hover {
+    background-color: #275895;
+}
+
+/* ===== 通用容器 ===== */
+.rectangle-horizontal,
+.PITURE2,
+.END-LINK,
+.END-Frist {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.rectangle-horizontal {
+    height: 850px;
+    background-color: white;
+}
+
+/* ===== 通用卡片样式（合并重复的 Flex 卡片） ===== */
+.NEW,
+.TUPIAN1,
+.TONGZI
+{
+    width: 320px;
+    height: 300px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #275895;
+    vertical-align: bottom;
+}
+.STUDENT,
+.STUDY,
+.PARTY{
+    width: 320px;
+    height: 300px;
+    margin-bottom: 20px;
+
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #275895;
+    vertical-align: bottom;
+}
+    /* 特殊间距的卡片 */
+.TUPIAN1,
+.PARTY {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* ===== 图片容器 ===== */
+.TUPIAN {
+    width: 1000px;
+    height: 200px;
+    background-color: red;
+    margin: 0 auto;
+}
+
+/* 通用图片样式（合并重复） */
+.TUPIAN img,
+.LOG-GUET-picture img,
+.TUPIAN1-First img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== 图片轮播指示器 ===== */
+.TUPIAN1-First {
+    width: 320px;
+    height: 275px;
+    background-color: indianred;
+    position: relative;
+}
+
+.TUPIAN1-Second {
+    width: 320px;
+    height: 25px;
+    background-color: white;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.TUPIAN1-Second a {
+    text-decoration: none;
+    color: #100f0f;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+}
+
+/* 轮播指示点（合并简写） */
+.TUPIAN1-First-1,
+.TUPIAN1-First-2,
+.TUPIAN1-First-3,
+.TUPIAN1-First-4,
+.TUPIAN1-First-5,
+.TUPIAN1-First-6 {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(147, 143, 143, 0.6);
+    color: white;
+    text-align: center;
+    top: 255px;
+}
+
+.TUPIAN1-First-1 { left: 182px; }
+.TUPIAN1-First-2 { left: 204px; }
+.TUPIAN1-First-3 { left: 226px; }
+.TUPIAN1-First-4 { left: 248px; }
+.TUPIAN1-First-5 { left: 272px; }
+.TUPIAN1-First-6 { left: 294px; }
+
+/* 指示点文字垂直居中（合并） */
+.TUPIAN1-First-1 li,
+.TUPIAN1-First-2 li,
+.TUPIAN1-First-3 li,
+.TUPIAN1-First-4 li,
+.TUPIAN1-First-5 li,
+.TUPIAN1-First-6 li {
+    transform: translateY(-12%);
+    font-size: 12px;
+}
+
+/* 激活状态（合并） */
+.TUPIAN1-First-1.active,
+.TUPIAN1-First-2.active,
+.TUPIAN1-First-3.active,
+.TUPIAN1-First-4.active,
+.TUPIAN1-First-5.active,
+.TUPIAN1-First-6.active {
+    background-color: rgba(237, 32, 32, 0.6);
+    transform: scale(1.1);
+}
+
+/* ===== 新闻列表 ===== */
+.NEW-First {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    color: white;
+    margin-left: 15px;
+}
+
+.NEW-Second {
+    width: 100%;
+    height: 10px;
+    background-color: white;
+}
+
+.NEW-block {
+    width: 100%;
+    height: 31px;
+    line-height: 31px;
+    background-color: white;
+    padding: 0 3px;
+    box-sizing: border-box;
+}
+
+.NEW-block-big {
+    border: 1px solid #ccc8c8;
+}
+
+/* 新闻链接通用样式 */
+.NEW a,
+.NEW-block a {
+    text-decoration: none;
+    color: #393838;
+}
+
+.NEW-block a {
+    position: absolute;
+    padding-left: 12px;
+    font-size: 14px;
+}
+
+/* 链接前的小方块 */
+.NEW-block a::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background-color: #a3a1a1;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.NEW-Data {
+    white-space: nowrap;
+    float: right;
+    color: #393838;
+    font-size: 12px;
+    display: block;
+    position: relative;
+}
+
+/* 悬停效果 */
+.NEW-block:hover a {
+    color: #275895;
+}
+
+.NEW-block:hover a::before {
+    background-color: #275895;
+}
+
+.NEW-block:hover .NEW-Data {
+    color: #275895;
+}
+
+/* ===== LOGO 区域 ===== */
+.LOG-GUET {
+    width: 100%;
+    height: 112px;
+    background-color: white;
+    left: 0;
+}
+
+.LOG-GUET-First {
+    width: 1000px;
+    height: 112px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.LOG-GUET-picture {
+    width: 384px;
+    height: 70px;
+    padding-top: 20px;
+}
+
+/* ===== 底部区域 ===== */
+.PITURE2 {
+    height: 194px;
+    background-color: #275895;
+}
+
+.PITURE2-First {
+    width: 1000px;
+    height: 44px;
+    line-height: 44px;
+    background-color: #275895;
+}
+
+.PITURE2-First li {
+    margin-left: 15px;
+    color: white;
+}
+
+.PITURE2-Second {
+    width: 1000px;
+    height: 8px;
+    background-color: white;
+}
+
+.PITURE2-Third {
+    width: 1000px;
+    height: 142px;
+    background-color: violet;
+}
+
+/* ===== 底部链接 ===== */
+.END-LINK {
+    height: 92px;
+    background-color: #0d51cf;
+}
+
+.END-LINK-First {
+    width: 1000px;
+    height: 57px;
+    background-color: white;
+    line-height: 57px;
+    font-size: 19px;
+}
+
+.END-LINK-Second {
+    width: 1000px;
+    height: 33px;
+    background-color: white;
+    margin-top: 2px;
+}
+
+/* ===== 底部版权 ===== */
+.END {
+    width: 100%;
+    height: 96px;
+    background-color: #275895;
+    margin: 40px;
+}
+
+.END-Frist {
+    height: 96px;
+    background-color: #275895;
+}
+
+.END-Frist li {
+    color: white;
+}
+.NEW-block {
+    width: 100%;
+    height: 31px;
+    line-height: 31px;
+    background-color: white;
+    padding: 0 3px;
+    box-sizing: border-box;
+    display: flex;           /* 启用 Flex */
+    justify-content: space-between;  /* 两端对齐 */
+    align-items: center;     /* 垂直居中 */
+    overflow: hidden;        /* 防止溢出 */
+}
+
+.NEW-block a {
+    text-decoration: none;
+
+    color: #393838;
+    padding-left: 12px;
+    font-size: 14px;
+    flex: 1;                 /* 占据剩余空间 */
+    overflow: hidden;        /* 隐藏溢出 */
+    text-overflow: ellipsis; /* 超出显示省略号 */
+    white-space: nowrap;     /* 不换行 */
+    position: relative;
+}
+
+.NEW-Data {
+    white-space: nowrap;
+    color: #393838;
+    font-size: 14px;
+    flex-shrink: 0;          /* 防止日期被压缩 */
+    margin-left: 10px;       /* 与标题保持间距 */
+}
