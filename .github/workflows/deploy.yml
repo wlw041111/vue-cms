@@ -38,6 +38,9 @@ jobs:
          
           git clone --depth 1 -b main git@github.com:wlw041111/VUE-CMS.git .
 
+      # =========================================================
+      # 阶段二：前端核心文件 MD5 指纹检测（强壮防错版）
+      # =========================================================
       - name: Frontend MD5 Fingerprint Detection
         id: filter
         run: |
