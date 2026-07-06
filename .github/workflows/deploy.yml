@@ -20,11 +20,13 @@ on:
 
 jobs:
   deploy-vue:
-
+    # 指定由打上了 vue-builder 标签的前端专用自托管 Runner 执行此任务
     runs-on: [self-hosted, vue-builder]
 
     steps:
-
+      # =========================================================
+      # 阶段一：原生 Git 安全拉取，绕过 Node 环境干扰
+      # =========================================================
       - name: Native Git Checkout with SSH
         run: |
           export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:$PATH
@@ -34,7 +36,7 @@ jobs:
           
           echo "Cloning frontend repository via SSH..."
          
-          git clone --depth 1 -b main git@github.com:wlw041111/AuthRole.git .
+          git clone --depth 1 -b main git@github.com:wlw041111/VUE-CMS.git .
 
       - name: Frontend MD5 Fingerprint Detection
         id: filter
