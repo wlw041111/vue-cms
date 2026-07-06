@@ -2,7 +2,7 @@ name: vue-cms
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - 'src/**'
       - 'public/**'
