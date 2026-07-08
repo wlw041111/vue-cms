@@ -24,6 +24,7 @@
         <label>栏目筛选：</label>
         <select v-model="filterType" @change="onFilterChange">
           <option value="">全部栏目</option>
+          <option value="学院新闻">学院新闻</option>
           <option value="党建工作">党建工作</option>
           <option value="通知公告">通知公告</option>
           <option value="学术活动">学术活动</option>
@@ -358,6 +359,7 @@ const getStatusClass = (s: string): string => {
 
 const getTypeClass = (type: string): string => {
   const map: Record<string, string> = {
+    '学院新闻': 'type-news',
     '党建工作': 'type-party',
     '通知公告': 'type-notice',
     '学术活动': 'type-academic',
@@ -717,6 +719,12 @@ onMounted(async () => {
 .btn-cancel { background: #e8edf4; color: #555; }
 .btn-cancel:hover { background: #d5dce6; }
 .btn-confirm { color: #fff; }
+.btn-confirm.pass { background: #27ae60; }
+.btn-confirm.pass:hover { background: #219a52; }
+.btn-confirm.reject { background: #e74c3c; }
+.btn-confirm.reject:hover { background: #c0392b; }
+.btn-confirm.delete { background: #e74c3c; }
+.btn-confirm.delete:hover { background: #c0392b; }
 
 @keyframes fadeIn {
   from { opacity: 0; }
