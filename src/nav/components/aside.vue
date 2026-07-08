@@ -10,8 +10,8 @@ const menuData = ref([
       {id:22220,name:"用户管理",url:'/userManage'},
 
     ]},
-  {id:3333,name:"角色管理" ,children:[
-      {id:33330,name:"角色信息",url:'/roleInfo'},
+  {id:3333,name:"身份权限" ,children:[
+      {id:33330,name:"权限管理",url:'/roleInfo'},
     ]},
   {id:5555,name:"订单管理" ,children:[
       {id:55550,name:"我的订单",url:'/roleInfo'},
@@ -107,14 +107,6 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
   "PingFang SC", "Microsoft YaHei", sans-serif;
   background: #f5f7fa;
-}
-
-.sidebar {
-  width: 260px;
-  background: #fff;
-  border-right: 1px solid #e5e6eb;
-  height: 100vh;
-  overflow-y: auto;
 }
 
 .menu {

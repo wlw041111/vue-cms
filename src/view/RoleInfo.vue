@@ -1,7 +1,7 @@
 <template>
   <div class="role-page">
     <div class="page-header">
-      <h2>角色管理</h2>
+      <h2>身份权限</h2>
     </div>
 
     <div class="table-wrapper">
@@ -226,10 +226,6 @@ onMounted(async () => { await fetchPerms(); await fetchUsers() })
 .center { text-align: center; color: #8899b0; padding: 40px; }
 
 .role-badge { padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-.role-super { background: #fff3cd; color: #856404; }
-.role-admin { background: #fde8e8; color: #c0392b; }
-.role-manager { background: #e8f5e9; color: #27ae60; }
-.role-staff { background: #e8f0fd; color: #1a5cff; }
 
 .btn-auth { padding: 6px 18px; background: #27ae60; color: #fff; border: none; border-radius: 4px; font-size: 13px; cursor: pointer; transition: background 0.3s; }
 .btn-auth:hover { background: #219a52; }

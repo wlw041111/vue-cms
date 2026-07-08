@@ -2,8 +2,11 @@
   <div class="news-manage">
     <!-- 头部 -->
     <div class="page-header">
-      <h2>📰 新闻管理</h2>
+      <h2>新闻管理</h2>
       <div class="header-actions">
+        <button class="btn-goto-news" @click="goToFrontNews">
+          新闻首页
+        </button>
         <button
             class="btn-add"
             @click="goCreate"
@@ -271,6 +274,10 @@ const goCreate = () => {
   router.push({ path: '/content/news/edit', query: { mode: 'create' } })
 }
 
+const goToFrontNews = () => {
+  window.open('/content/notice', '_blank')
+}
+
 const goEdit = (item: any) => {
   router.push({ path: '/content/news/edit', query: { id: item.id, mode: 'edit' } })
 }
@@ -417,6 +424,20 @@ onMounted(async () => {
 .btn-add:hover {
   background: #0a2d5e;
 }
+.btn-goto-news {
+  padding: 10px 24px;
+  background: #fff;
+  color: #0F3C7C;
+  border: 2px solid #0F3C7C;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-goto-news:hover {
+  background: #e8f0fd;
+}
 
 /* ===== 搜索栏 ===== */
 .search-bar {
@@ -531,10 +552,6 @@ onMounted(async () => {
   font-size: 12px;
   font-weight: 500;
 }
-.type-party { background: #fde8e8; color: #c0392b; }
-.type-notice { background: #fff3cd; color: #856404; }
-.type-academic { background: #e8f0fd; color: #1a5cff; }
-.type-student { background: #e8f5e9; color: #27ae60; }
 
 /* 状态标签 */
 .status-tag {
@@ -543,9 +560,6 @@ onMounted(async () => {
   font-size: 12px;
   font-weight: 600;
 }
-.status-pending { background: #fff3e0; color: #e67e22; }
-.status-pass { background: #d4edda; color: #155724; }
-.status-reject { background: #f8d7da; color: #721c24; }
 
 /* 操作按钮 */
 .col-actions {
@@ -703,12 +717,6 @@ onMounted(async () => {
 .btn-cancel { background: #e8edf4; color: #555; }
 .btn-cancel:hover { background: #d5dce6; }
 .btn-confirm { color: #fff; }
-.btn-confirm.pass { background: #27ae60; }
-.btn-confirm.pass:hover { background: #219a52; }
-.btn-confirm.reject { background: #e74c3c; }
-.btn-confirm.reject:hover { background: #c0392b; }
-.btn-confirm.delete { background: #95a5a6; }
-.btn-confirm.delete:hover { background: #7f8c8d; }
 
 @keyframes fadeIn {
   from { opacity: 0; }
