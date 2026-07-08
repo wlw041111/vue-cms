@@ -76,8 +76,8 @@ const fetchAllNews = async () => {
     partyList.value = allNews.filter((item: any) => item.category === '党建工作')
     studentList.value = allNews.filter((item: any) => item.category === '学工新闻')
 
-    // 学院新闻取所有类型的前8条
-    newsList.value = allNews.slice(0, 8)
+    // 学院新闻只取"学院新闻"分类的前8条
+    newsList.value = allNews.filter((item: any) => item.category === '学院新闻').slice(0, 8)
 
     console.log('新闻数据加载成功：', allNews)
   } catch (error) {

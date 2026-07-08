@@ -14,6 +14,7 @@
       <div class="form-row">
         <label>栏目：</label>
         <select v-model="category">
+          <option value="学院新闻">学院新闻</option>
           <option value="党建工作">党建工作</option>
           <option value="通知公告">通知公告</option>
           <option value="学术活动">学术活动</option>
@@ -112,7 +113,7 @@ const editorRef = shallowRef()
 const toolbarConfig = {}
 const mode = ref("default")
 const content = ref('')
-const category = ref<string>('党建工作')
+const category = ref<string>('学院新闻')
 const title = ref<string>('')
 const supplier = ref<string>('')
 const reviewer = ref<string>('')
@@ -131,7 +132,7 @@ const loadNewsData = async (id: number) => {
     const data = res?.data || res
     if (data) {
       title.value = data.title || ''
-      category.value = data.category || '党建工作'
+      category.value = data.category || '学院新闻'
       supplier.value = data.supplier || ''
       reviewer.value = data.reviewer || ''
       content.value = data.content || ''
