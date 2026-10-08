@@ -10,6 +10,7 @@ on:
       - 'package.json'
       - 'vite.config.*'
       - 'vue.config.*'
+      - '.env*'
   workflow_dispatch:
     inputs:
       force_rebuild:
@@ -53,8 +54,8 @@ jobs:
           
           OLD_FINGERPRINT="$CACHE_DIR/last_frontend_md5.txt"
           
-          # 2. 计算当前核心源码文件的物理指纹
-          CURRENT_FINGERPRINT=$(find src/ public/ package.json -type f 2>/dev/null | sort | xargs md5sum 2>/dev/null | md5sum | cut -d' ' -f1)
+          # 2. 计算当前核心源码文件的物理指纹（含 .env* 环境变量文件，确保改地址也能触发重构建）
+          CURRENT_FINGERPRINT=$( (find src/ public/ package.json -type f 2>/dev/null; find . -maxdepth 1 -name '.env*' -type f 2>/dev/null) | sort | xargs -r md5sum 2>/dev/null | md5sum | cut -d' ' -f1)
           echo "Current Frontend Fingerprint: $CURRENT_FINGERPRINT"
           
           NEED_BUILD="false"

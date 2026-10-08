@@ -7,6 +7,8 @@ import {useUserStore} from "@/stores/user.ts";
 import {ElMessage} from "element-plus";
 
 const instance = axios.create({
+    // 【重要】生产环境 baseURL 必须留空：请求将走同源相对路径（/api/**），由 nginx 反向代理到后端。
+    // 切勿写死 http://IP:端口 —— 会造成跨域与 https 页面下的混合内容拦截，后端迁移后前端亦会立即失效。
     baseURL: import.meta.env.VITE_API_BASE_URL,
     timeout: 5000, // 1000ms 有点短，容易超时
 });
@@ -35,9 +37,6 @@ instance.interceptors.response.use(
     (response) => {
         // 这里的 response.data 就是后端的 Result 对象
         const res = response.data;
-
-
-
 
 
         return res;
